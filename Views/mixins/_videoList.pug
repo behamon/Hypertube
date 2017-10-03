@@ -1,0 +1,34 @@
+mixin videoList()
+	#videoList
+		each movieList, i in movies
+			br
+			if i === 0
+				h3.text-center(tkey="sciFi")
+			else if i === 1
+				h3.text-center(tkey="action")
+			else if i === 2
+				h3.text-center(tkey="comedy")
+			else if i === 3
+				h3.text-center(tkey="drama")
+			br
+			.row
+				.offset-xl-3
+				each movie, n in movieList
+					- var currentTime = 3600;
+					if i === 0
+						- var x = 1 * n;
+					else
+						- var x = i * 6 + n;
+					.col-md-2.col-xl-1.col-4.movieLaunch(id=`image${x}` filmid=`${movie._id}` filmCurrent=`${movie.current}` filmLength=`${movie.length}`)
+						a(href="#" style="color: white")
+							img(style="width: 100%;" src=`${movie.image}` alt=`Image not found..` title=`${movie.title}`)
+							div.filmMiniature
+								p.text-center.filmTitle
+									b #{movie.title}
+								p.text-center.filmYear #{movie.year}
+								p.text-center.filmRate #{movie.rating} / 10
+						if movie.length > 0
+							div(style="background-color: rgba(0, 0, 0, 0.66); height: 4px;")
+									div.filmReaded(style=`background-color: green; height: 100%; width: ${((movie.current) / (movie.length * 60)) * 100}%;`)
+	#filmsList
+	img#searchLoading.offset-5.col-3(src="/assets/loading.gif" style="width: 250px; text-align: center;")

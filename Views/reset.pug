@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	+hiddenVar()
+	.container-fluid
+		.row
+			.col-xl-4.offset-xl-4.valign
+				.jumbotron
+					.innerJumbotron
+						h3.display-4(tkey="signup")
+						form#resetForm(method="POST")
+							.form-group
+								label.form-control-label(for="password" tkey="newPwd")
+								input.form-control.form-control-warning(id="password" name='password' type='password' placeholder="********")
+								small.form-text.text-muted
+								br
+								label.form-control-label(for="repassword" tkey="reNewPwd")
+								input.form-control.form-control-warning(id="repassword" name='repassword' type='password' placeholder="********")
+								small.form-text.text-muted
+								br
+								button.btn-styler.btn(type="submit" style="width: 100%;")
+									span(tkey="finish")

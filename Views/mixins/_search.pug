@@ -1,0 +1,56 @@
+mixin search()
+	#search
+		.row
+			.col-8.col-md-10.col-xl-5.offset-xl-3
+					input.form-control#searchValue(name="search" placeholder="Search")
+			.col-4.col-md-2.col-xl-1
+				button.btn.btn-style#searchBtn(style="width: 100%; height: 100%;")
+					span.glyphicon.glyphicon-search
+		br
+		.row
+			.col-12.col-xl-6.offset-xl-3
+				label.form-control-label(for="rating" style="color: red;" tkey="rating")  :&nbsp;
+				br
+				span(style="color: red;")
+					b(style="float: left") 0
+					b(style="float: right") 10
+				#rating
+		br
+		.row
+			.col-4.col-xl-2.offset-xl-3
+					label.form-control-label(for="catagory" style="color: red;" tkey="category")  :
+					br
+					select.custom-select#categoryValue(name="category")
+						option(value="", tkey="all")
+						option(value="Action" tkey="action")
+						option(value="Adventure" tkey="adventure")
+						option(value="Animation" tkey="animation")
+						option(value="Biography" tkey="biography")
+						option(value="Comedy" tkey="comedy")
+						option(value="Crime" tkey="crime")
+						option(value="Documentary" tkey="documentary")
+						option(value="Drama" tkey="drama")
+						option(value="Family" tkey="family")
+						option(value="Fantasy" tkey="fantasy")
+						option(value="History" tkey="history")
+						option(value="Horror" tkey="horror")
+						option(value="Music" tkey="music")
+						option(value="Musical" tkey="musical")
+						option(value="Mystery" tkey="mystery")
+						option(value="News" tkey="news")
+						option(value="Reality-tv" tkey="realityTv")
+						option(value="Romance" tkey="romance")
+						option(value="Sci-fi" tkey="sciFi")
+						option(value="Sport" tkey="sport")
+						option(value="Talk-show" tkey="talkShow")
+						option(value="Thriller" tkey="thriller")
+						option(value="War" tkey="war")
+						option(value="Western" tkey="western")
+			.col-4.col-xl-2
+					label.form-control-label(for="orderBy" style="color: red;" tkey="orderBy")  :
+					br
+					select.custom-select#orderByValue(name="orderBy")
+						option(value="title" tkey="alphabetical")
+						option(value="year" tkey="releaseYear")
+						option(value="rating" tkey="rating")
+						option(value="length" tkey="duration")

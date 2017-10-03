@@ -1,0 +1,26 @@
+mixin header()
+	br
+	.row
+		a.col-md-2.offset-md-1.center-xs(href="/" style="color:inherit; text-decoration: none;")
+			span(style="color: red;font-size: 30px;") HyperTube
+		if (user)
+			.col-3.hidden-md-up
+			.input-group.offset-md-5.col-md-2.col-6#userFound
+				.row(style="width: 100%;")
+					.col-12
+						input.form-control#searchUserValue(style="width: 100%;" name="search" placeholder="User")
+					.col-12
+						#userFoundList.row(style="position: absolute; z-index: 1000; width: 100%;")
+			span.col-md-2.center-xs(style="color: grey;font-size: 14px;")
+				.dropdown
+					button.btn.btn-default.dropdown-toggle#dropdownMenu1(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="font-size: 12px;") #{user.username}
+					ul.dropdown-menu(aria-labelledby="dropdownMenu1")
+						li.dropdown-header
+							hr
+						li
+							a#myAccBtn(href="#" tkey="myAccount")
+						li.dropdown-divider
+						li
+							a(href="/logout" title="Lien 1" tkey="logout")
+	br
+	br

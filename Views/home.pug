@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	+hiddenVar()
+	if user
+		.container-fluid
+			+homepage()
+	else
+		.container-fluid
+			+login()

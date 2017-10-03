@@ -1,0 +1,35 @@
+mixin edit()
+	#myAccount.row.valign.hidden
+		.col-lg-4.offset-lg-4
+			.jumbotron
+				.innerJumbotron
+					h3.display-4.text-center(tkey="edit") :
+					button#close(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+					div.alert.alert-success.alert-dismissible.hidden(role="alert")
+						span(tkey="successEdit")
+					form
+						.form-group
+							#input1
+								label.form-control-label(for="email") Email
+								input.form-control#email(name="email" type='email' value=`${user.email}` placeholder="Email")
+								small.form-text.text-muted
+							br
+							#input2
+								label.form-control-label(for="username" tkey="username")
+								input.form-control#usrname(name="username" type='text' value=`${user.username}` placeholder="Jhon D")
+								small.form-text.text-muted
+							br
+							#input3
+								label.form-control-label(for="photo" tkey='import')
+								input.form-control-file#pictures(name='photo' type='file' aria-describedby="fileHelp")
+								small.form-text.text-muted
+							br
+							.text-center(style="width: 100%;")
+								if user.photo
+									img#picture(src=`${user.photo}` style="max-width: 100%;")
+								else
+									img#picture(style="max-width: 100%;")
+							br
+					button#sendEdit.btn-styler.btn(style="width: 100%;")
+						span(tkey="finish")
